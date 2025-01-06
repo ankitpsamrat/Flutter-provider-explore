@@ -1,6 +1,5 @@
-import 'package:explore_provider/counter/counter_provider.dart';
-import 'package:explore_provider/slider/slider_provider.dart';
-import 'package:explore_provider/slider/slider_screen.dart';
+import 'package:explore_provider/favourite/favourite_provider.dart';
+import 'package:explore_provider/favourite/favourite_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -15,14 +14,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => CounterProvider()),
-        ChangeNotifierProvider(create: (_) => SliderProvider()),
+        // ChangeNotifierProvider(create: (_) => CounterProvider()),
+        // ChangeNotifierProvider(create: (_) => SliderProvider()),
+        ChangeNotifierProvider(create: (_) => FavouriteProvider()),
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Provider explore',
         // home: HomeScreen(),
-        home: SliderScreen(),
+        // home: SliderScreen(),
+        home: FavouriteScreen(),
       ),
     );
   }
