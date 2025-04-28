@@ -1,11 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
 import 'package:explore_provider/counter/counter_provider.dart';
+import 'package:explore_provider/dataList/data_provider.dart';
+import 'package:explore_provider/dataList/data_screen.dart';
 import 'package:explore_provider/favourite/favourite_provider.dart';
 import 'package:explore_provider/slider/slider_provider.dart';
 import 'package:explore_provider/theme/theme_provider.dart';
-import 'package:explore_provider/theme/theme_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => SliderProvider()),
         ChangeNotifierProvider(create: (_) => FavouriteProvider()),
         ChangeNotifierProvider(create: (_) => ThemeProvider()),
+        ChangeNotifierProvider(create: (_) => DataProvider()),
       ],
       // for theme provider to work, we need to wrap MaterialApp with Builder
       child: Builder(
@@ -33,7 +34,8 @@ class MyApp extends StatelessWidget {
             // home: HomeScreen(),
             // home: SliderScreen(),
             // home: FavouriteScreen(),
-            home: const ThemeScreen(),
+            // home: const ThemeScreen(),
+            home: const DataScreen(),
           );
         },
       ),
